@@ -1,5 +1,7 @@
 /*************
  * 障碍物
+ * BY：CM.Ivan
+ * EMail：cm.ivan@qq.com
  *************/
 function Obstacle(war){
 var _this = new Object();
@@ -13,129 +15,22 @@ var _this = new Object();
 	_this.attack  = 50;
 	_this.defense = 50;
 	_this.powerMax= 100;
-	
 	_this.clas = 'collision';
 	_this.type = 'obstacle';
-	
-	_this.powerBody = function(){
-		_this.body.find('.power').css({
-			'left':'0',
-			'top':'-10px',
-			'width':'50px',
-			'height':'20px',
-			'position':'absolute'
-		}).find('.bar').css({
-			'height':'4px',
-			'line-height':'4px',
-			'border':'#060 1px solid',
-			'box-shadow':'0 1px 3px #333 bd',
-			'-moz-box-shadow':'0 1px 3px #333 bd',
-			'-webkit-box-shadow':'0 1px 3px #333 bd',
-			'overflow':'hidden'
-		}).find('div').css({
-			'width':'100%',
-			'background-color':'#060',
-			'overflow':'hidden',
-			'opacity':'0.6'
-		});
-		
-		_this.body.find('.mask').css({
-			'width': _this.width + 'px',
-			'height': _this.height + 'px',
-			'background-color':'#333',
-			'position':'absolute',
-			'border':'#999 1px solid',
-			'border-radius':'20px',
-			'opacity':'0.2'
-		});
-		_this.body.find('.mask').fadeOut(0);
-		_this.body.find('.power').fadeOut(0);
-	}
-	_this.powerUpdate = function(val){
-		var _val = _this.power - ((val*val)/(_this.defense*2));
-		_val = parseInt(_val);
-		if(_val<=0){ _val=0; }
-		_this.powerTo(_val);
-		if(_val==0){ return true; }else{ return false; }
-	}
+	_this.powerBody=function(){_this.body.find('\x2e\x70\x6f\x77\x65\x72').css({'\x6c\x65\x66\x74':'\x30','\x74\x6f\x70':'\x2d\x31\x30\x70\x78','\x77\x69\x64\x74\x68':'\x35\x30\x70\x78','\x68\x65\x69\x67\x68\x74':'\x32\x30\x70\x78','\x70\x6f\x73\x69\x74\x69\x6f\x6e':'\x61\x62\x73\x6f\x6c\x75\x74\x65'}).find('\x2e\x62\x61\x72').css({'\x68\x65\x69\x67\x68\x74':'\x34\x70\x78','\x6c\x69\x6e\x65\x2d\x68\x65\x69\x67\x68\x74':'\x34\x70\x78','\x62\x6f\x72\x64\x65\x72':'\x23\x30\x36\x30\x20\x31\x70\x78\x20\x73\x6f\x6c\x69\x64','\x62\x6f\x78\x2d\x73\x68\x61\x64\x6f\x77':'\x30\x20\x31\x70\x78\x20\x33\x70\x78\x20\x23\x33\x33\x33\x20\x62\x64','\x2d\x6d\x6f\x7a\x2d\x62\x6f\x78\x2d\x73\x68\x61\x64\x6f\x77':'\x30\x20\x31\x70\x78\x20\x33\x70\x78\x20\x23\x33\x33\x33\x20\x62\x64','\x2d\x77\x65\x62\x6b\x69\x74\x2d\x62\x6f\x78\x2d\x73\x68\x61\x64\x6f\x77':'\x30\x20\x31\x70\x78\x20\x33\x70\x78\x20\x23\x33\x33\x33\x20\x62\x64','\x6f\x76\x65\x72\x66\x6c\x6f\x77':'\x68\x69\x64\x64\x65\x6e'}).find('\x64\x69\x76').css({'\x77\x69\x64\x74\x68':'\x31\x30\x30\x25','\x62\x61\x63\x6b\x67\x72\x6f\x75\x6e\x64\x2d\x63\x6f\x6c\x6f\x72':'\x23\x30\x36\x30','\x6f\x76\x65\x72\x66\x6c\x6f\x77':'\x68\x69\x64\x64\x65\x6e','\x6f\x70\x61\x63\x69\x74\x79':'\x30\x2e\x36'});_this.body.find('\x2e\x6d\x61\x73\x6b').css({'\x77\x69\x64\x74\x68':_this.width+'\x70\x78','\x68\x65\x69\x67\x68\x74':_this.height+'\x70\x78','\x62\x61\x63\x6b\x67\x72\x6f\x75\x6e\x64\x2d\x63\x6f\x6c\x6f\x72':'\x23\x33\x33\x33','\x70\x6f\x73\x69\x74\x69\x6f\x6e':'\x61\x62\x73\x6f\x6c\x75\x74\x65','\x62\x6f\x72\x64\x65\x72':'\x23\x39\x39\x39\x20\x31\x70\x78\x20\x73\x6f\x6c\x69\x64','\x62\x6f\x72\x64\x65\x72\x2d\x72\x61\x64\x69\x75\x73':'\x32\x30\x70\x78','\x6f\x70\x61\x63\x69\x74\x79':'\x30\x2e\x32'});_this.body.find('\x2e\x6d\x61\x73\x6b').fadeOut(0x0);_this.body.find('\x2e\x70\x6f\x77\x65\x72').fadeOut(0x0)}
+	_this.powerUpdate=function(a){var b=_this.power-((a*a)/(_this.defense*0x2));b=parseInt(b);if(b<=0x0){b=0x0};_this.powerTo(b);if(b==0x0){return true}else{return false}}
 	_this.powerTo = function(_val){
 		_this.power = _val;
 		//红色警告颜色
-		_bar = _this.body.find('.power').find('.bar');
-		if(_val<=(_this.powerMax/2.5)){
-			_bar.css({'border':'#900 1px solid'}).find('div').css({'background-color':'#900'});
-		}
+_bar=_this.body.find('\x2e\x70\x6f\x77\x65\x72').find('\x2e\x62\x61\x72');if(_val<=(_this.powerMax/2.5)){_bar.css({'\x62\x6f\x72\x64\x65\x72':'\x23\x39\x30\x30\x20\x31\x70\x78\x20\x73\x6f\x6c\x69\x64'}).find('\x64\x69\x76').css({'\x62\x61\x63\x6b\x67\x72\x6f\x75\x6e\x64\x2d\x63\x6f\x6c\x6f\x72':'\x23\x39\x30\x30'})}
 		_val = parseInt(_val/_this.powerMax*100);
 		_this.body.find('.power').find('span').text(_val)
 		_bar.find('div').animate({'width':_val+'%'},200);
 	}
-	_this.powerShow = function(){
-		_this.body.find('.mask').fadeIn(0);
-		_this.body.find('.power').fadeIn(0);
-	}
-	_this.powerHide = function(){
-		_this.body.find('.mask').fadeOut(600);
-		_this.body.find('.power').fadeOut(300);
-	}
-	
-	_this.creat = function(){
-		//重新加载power
-		_this.power = _this.powerMax;
-		_this.body = $('<div><div class="power"><span>'+_this.power+'</span><div class="bar"><div>&nbsp;</div></div></div><div class="mask">&nbsp;</div></div>');
-
-		var _left = _this.left-(_this.width/2);
-		var _top = _this.top-(_this.height/2);
-		_this.body.appendTo('body').attr('id',_this.id).css({
-			'left':_left,'top':_top,
-			'width':_this.width+'px',
-			'height':_this.height+'px',
-			'background-image':'url('+ _this.img +')',
-			'background-color':'',
-			'position':'absolute',
-			'background-repeat':'no-repeat'
-			});
-		_this.obj = $('#'+_this.id);
-		if(_this.clas!=null){ _this.obj.attr('class',_this.clas); }
-		if(_this.type!=null){ _this.obj.attr('type',_this.type); }
-		//power
-		_this.powerBody();
-	};
-	
-	//重新调整方向
-	_this.reArrow = function(){
-		var arrow = arguments[0]?arguments[0]:_this.arrow;  
-		if(war.stop==false){
-			switch( arrow ){
-				case 't': //上
-				  _this.arrow = arrow;
-				  _this.obj.css({'background-position':'left top'});
-				  break;
-				case 'b': //下
-				  _this.arrow = arrow;
-				  _this.obj.css({'background-position':'right top'});
-				  break;
-				case 'l': //左
-				  _this.arrow = arrow;
-				  _this.obj.css({'background-position':'bottom right'});
-				  break;
-				case 'r': //右
-				  _this.arrow = arrow;
-				  _this.obj.css({'background-position':'bottom left'});
-				  break;
-			}
-		}
-	}
-	
+	_this.powerShow=function(){_this.body.find('\x2e\x6d\x61\x73\x6b').fadeIn(0x0);_this.body.find('\x2e\x70\x6f\x77\x65\x72').fadeIn(0x0)};_this.powerHide=function(){_this.body.find('\x2e\x6d\x61\x73\x6b').fadeOut(0x258);_this.body.find('\x2e\x70\x6f\x77\x65\x72').fadeOut(0x12c)}
+	_this.creat=function(){_this.power=_this.powerMax;_this.body=$('\x3c\x64\x69\x76\x3e\x3c\x64\x69\x76\x20\x63\x6c\x61\x73\x73\x3d\x22\x70\x6f\x77\x65\x72\x22\x3e\x3c\x73\x70\x61\x6e\x3e'+_this.power+'\x3c\x2f\x73\x70\x61\x6e\x3e\x3c\x64\x69\x76\x20\x63\x6c\x61\x73\x73\x3d\x22\x62\x61\x72\x22\x3e\x3c\x64\x69\x76\x3e\x26\x6e\x62\x73\x70\x3b\x3c\x2f\x64\x69\x76\x3e\x3c\x2f\x64\x69\x76\x3e\x3c\x2f\x64\x69\x76\x3e\x3c\x64\x69\x76\x20\x63\x6c\x61\x73\x73\x3d\x22\x6d\x61\x73\x6b\x22\x3e\x26\x6e\x62\x73\x70\x3b\x3c\x2f\x64\x69\x76\x3e\x3c\x2f\x64\x69\x76\x3e');var a=_this.left-(_this.width/0x2);var b=_this.top-(_this.height/0x2);_this.body.appendTo('\x62\x6f\x64\x79').attr('\x69\x64',_this.id).css({'\x6c\x65\x66\x74':a,'\x74\x6f\x70':b,'\x77\x69\x64\x74\x68':_this.width+'\x70\x78','\x68\x65\x69\x67\x68\x74':_this.height+'\x70\x78','\x62\x61\x63\x6b\x67\x72\x6f\x75\x6e\x64\x2d\x69\x6d\x61\x67\x65':'\x75\x72\x6c\x28'+_this.img+'\x29','\x62\x61\x63\x6b\x67\x72\x6f\x75\x6e\x64\x2d\x63\x6f\x6c\x6f\x72':'','\x70\x6f\x73\x69\x74\x69\x6f\x6e':'\x61\x62\x73\x6f\x6c\x75\x74\x65','\x62\x61\x63\x6b\x67\x72\x6f\x75\x6e\x64\x2d\x72\x65\x70\x65\x61\x74':'\x6e\x6f\x2d\x72\x65\x70\x65\x61\x74'});_this.obj=$('\x23'+_this.id);if(_this.clas!=null){_this.obj.attr('\x63\x6c\x61\x73\x73',_this.clas)};if(_this.type!=null){_this.obj.attr('\x74\x79\x70\x65',_this.type)};_this.powerBody()};
+	_this.reArrow=function(){var a=arguments[0x0]?arguments[0x0]:_this.arrow;if(war.stop==false){switch(a){case'\x74':_this.arrow=a;_this.obj.css({'\x62\x61\x63\x6b\x67\x72\x6f\x75\x6e\x64\x2d\x70\x6f\x73\x69\x74\x69\x6f\x6e':'\x6c\x65\x66\x74\x20\x74\x6f\x70'});break;case'\x62':_this.arrow=a;_this.obj.css({'\x62\x61\x63\x6b\x67\x72\x6f\x75\x6e\x64\x2d\x70\x6f\x73\x69\x74\x69\x6f\x6e':'\x72\x69\x67\x68\x74\x20\x74\x6f\x70'});break;case'\x6c':_this.arrow=a;_this.obj.css({'\x62\x61\x63\x6b\x67\x72\x6f\x75\x6e\x64\x2d\x70\x6f\x73\x69\x74\x69\x6f\x6e':'\x62\x6f\x74\x74\x6f\x6d\x20\x72\x69\x67\x68\x74'});break;case'\x72':_this.arrow=a;_this.obj.css({'\x62\x61\x63\x6b\x67\x72\x6f\x75\x6e\x64\x2d\x70\x6f\x73\x69\x74\x69\x6f\x6e':'\x62\x6f\x74\x74\x6f\x6d\x20\x6c\x65\x66\x74'});break}}}
 	_this.moveID = null;
-	_this.display = function(){
-		if(_this.moveID!=null){ clearTimeout( _this.moveID ); }
-
-		_this.obj.css({'background-color':'#060'});
-		_this.obj.fadeOut(300,function(){ $(this).remove(); });
-		
-		war.allobj.remove(_this);
-		delete _this;
-	};
-	
+	_this.display=function(){if(_this.moveID!=null){clearTimeout(_this.moveID)};_this.obj.css({'\x62\x61\x63\x6b\x67\x72\x6f\x75\x6e\x64\x2d\x63\x6f\x6c\x6f\x72':'\x23\x30\x36\x30'});_this.obj.fadeOut(0x12c,function(){$(this).remove()});war.allobj.remove(_this);delete _this};
 	return _this;
 }

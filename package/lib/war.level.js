@@ -1,5 +1,7 @@
 /*************
  * 战场
+ * BY：CM.Ivan
+ * EMail：cm.ivan@qq.com
  *************/
 function Level(){
 	var level = new Object(); 

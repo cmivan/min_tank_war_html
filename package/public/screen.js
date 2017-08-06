@@ -13,16 +13,15 @@ var $skin = {
 }
 $(function(){
 	$('body').css({
-				  'font-size':'12px',
-				  'font-family':'Tahoma, Geneva, sans-serif',
-				  'line-height':'15px',
-				  'margin':'0',
-				  'background-image':'url('+$skin.war_bg+')',
-				  'background-color':'#333',
-				  'color':'#fff',
-				  'position':'relative',
-				  'overflow':'hidden'
-				  });
-	//$(document).bind("contextmenu",function(){return false;});  
+		'font-size':'12px',
+		'font-family':'Tahoma, Geneva, sans-serif',
+		'line-height':'15px',
+		'margin':'0',
+		'background-image':'url('+$skin.war_bg+')',
+		'background-color':'#333',
+		'color':'#fff',
+		'position':'relative',
+		'overflow':'hidden'
+		});
 	$(document).bind("selectstart",function(){return false;});  
 });
